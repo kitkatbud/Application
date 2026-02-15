@@ -5,13 +5,31 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Payment Page</h1>
-  <p>Apartment application fee: $50</p>
-  <button id="payBtn">Pay Now</button>
+  <div class="checkout-container">
+    <h1>Checkout</h1>
+    <p id="userInfo"></p>
+    <p>Apartment Application Fee: <strong>$50</strong></p>
+
+    <label>Card Number</label>
+    <input type="text" placeholder="4242 4242 4242 4242">
+
+    <label>Expiry</label>
+    <input type="text" placeholder="MM/YY">
+
+    <label>CVC</label>
+    <input type="text" placeholder="123">
+
+    <button id="payBtn">Pay Now</button>
+  </div>
 
   <script>
+    // show user info
+    const name = sessionStorage.getItem("name")
+    const email = sessionStorage.getItem("email")
+    document.getElementById("userInfo").textContent = `Name: ${name} | Email: ${email}`
+
     document.getElementById("payBtn").addEventListener("click", () => {
-      alert("payment successful (mock)")
+      // simulate payment
       window.location.href = "success.html"
     })
   </script>
