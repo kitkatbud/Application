@@ -1,24 +1,111 @@
+/* general reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* h1 styling */
+h1 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #222;
+  text-align: center;
+}
+
+/* form styling (application page) */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+input {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: #0070f3;
+  outline: none;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #0070f3, #0051a3);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  transition: all 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.25);
+}
+
+/* checkout page tweaks */
 .checkout-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   background: #fff;
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 400px;
 }
 
 .checkout-container input {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-size: 16px;
 }
 
 .checkout-container button {
-  background: #0070f3;
+  background: linear-gradient(145deg, #28a745, #1e7e34);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
 
 .checkout-container button:hover {
-  background: #0051a3;
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.25);
+}
+
+/* responsive tweaks */
+@media (max-width: 500px) {
+  form, .checkout-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  input, button {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
